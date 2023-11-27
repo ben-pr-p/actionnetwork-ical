@@ -25,4 +25,10 @@ GET https://deployedurl.com/events?feed=X&feed=X`
 
 ### Creating a Google Calendar feed from an ical URL 
 
+To create a Google Calendar feed from a URL:
+1. Go to calendar.google.com
+2. Near "Other calendars" in the bottom left, click the "+" button to its right
+3. Select "From URL"
+4. Paste the URL with feed=X&feed=Y included
+5. All done!
 
