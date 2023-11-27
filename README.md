@@ -3,16 +3,23 @@
 This is a small utility that can convert multiple Action Network event feeds into
 a live ical event feed, suitable for import into Google as a public calendar.
 
+## Configuring
+
+For this to run, just add as many environment variables that start with ACTION_NETWORK_API_KEY_
+as you want.
+
+Each of those (ACTION_NETWORK_API_KEY_TEAM_A, ACTIONNETWORK_API_KEY_TEAM_B, etc.) will then be referenced
+as TEAM_A, TEAM_B, etc. when fetching events.
+
 ## Usage
 
 ### Getting a List of Event Keys
 
 To get a list of possible keys, issue a `GET` to `https://deployedurl.com/directory`:
 ```
-GET https://deployedurl.com/directory
-{
-
-}
+curl "https://deployedurl.com/directory"
+- TEAM_A
+- TEAM_B
 ```
 
 ### Fetching an ical Feed

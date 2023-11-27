@@ -53,10 +53,6 @@ type ActionNetworkEventList = {
   };
 };
 
-const config = cleanEnv(process.env, {
-  BASE_URL: url({ devDefault: "https://localhost:3000" }),
-});
-
 const app = new Hono();
 
 app.get("/", (c) =>
