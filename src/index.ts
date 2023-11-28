@@ -175,7 +175,11 @@ async function fetchAllEventsForCalendar(calendarName: keyof typeof API_KEYS) {
   const token = API_KEYS[calendarName]!;
 
   while (hasNextPage) {
-    const response = await fetch(url, {
+    const currentDate = new Date().toISOString();
+    const queryParams = new URLSearchParams({
+      filter: `start_date gt '${currentDate}'`,
+    });
+    const response = await fetch(`${url}?${queryParams}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
